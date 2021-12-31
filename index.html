@@ -3,14 +3,30 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
+    
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <form>
+      
+        
+            <h1>Simple Interest Calculator</h1>
+            <label for="amount">Amount</label>
+            <input type="number" id="principal"><br/><br/>
+            <label for="rate">Rate</label>
+            <input type="range" id="rate" min="1" max="25" value="10.5%" class="slider">
+            <span id="numeric"></span>%<br/><br/>
+            <label for="years">No. of Years</label>
+            <input type="number" id="years" min="1" max="25" value="5" class="years"><br/><br/>
+            <script>
+                var SLIDER = document.getElementById("rate");
+                var OUTPUT = document.getElementById("numeric");
+                OUTPUT.innerHTML = SLIDER.value;
+                SLIDER.oninput = function() {
+                OUTPUT.innerHTML = this.value;
+                }
+            </script>  
+            <input type="submit" onclick="compute(); return false;" value="Compute Interest" class="submit"> 
+            <div id="RESULT"></div>
+            <p>&copy; Everyone Can Get Rich</p>
+        </form>
     </body>
 </html>
