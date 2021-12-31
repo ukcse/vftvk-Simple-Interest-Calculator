@@ -6,17 +6,27 @@
     
     <body>
         <form>
-      
-        
             <h1>Simple Interest Calculator</h1>
             <label for="amount">Amount</label>
-            <input type="number" id="principal"><br/><br/>
+            <input type="number" id="principal" onchange="Validate_Amount()"><br/><br/>
             <label for="rate">Rate</label>
-            <input type="range" id="rate" min="1" max="25" value="10.5%" class="slider">
+            <input type="range" id="rate" min="1" max="25" value="10.5" class="slider">
             <span id="numeric"></span>%<br/><br/>
             <label for="years">No. of Years</label>
-            <input type="number" id="years" min="1" max="25" value="5" class="years"><br/><br/>
-            <script>
+            <select name="Years" id="years" class="years"><br/><br/>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br/><br/>
+            
+            <script>//Note, this script could have been prevented and function could have been written within script.js, but added here to show the anonymous functions or self-executing functions within javascript
                 var SLIDER = document.getElementById("rate");
                 var OUTPUT = document.getElementById("numeric");
                 OUTPUT.innerHTML = SLIDER.value;
@@ -24,8 +34,8 @@
                 OUTPUT.innerHTML = this.value;
                 }
             </script>  
-            <input type="submit" onclick="compute(); return false;" value="Compute Interest" class="submit"> 
-            <div id="RESULT"></div>
+            <input type="submit" onclick="Compute(); return false;" value="Compute Interest" class="submit"> 
+            <P id="RESULT"></P>
             <p>&copy; Everyone Can Get Rich</p>
         </form>
     </body>
