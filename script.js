@@ -8,7 +8,7 @@ function Compute()
     var AMOUNT = (RATE/100*PRINCIPAL)*YEARS;
     var PARA = document.createElement("P");
     var FUTUREYEAR= new Date().getFullYear() + YEARS;
-    PARA.innerHTML = "If you deposit <mark>"+ PRINCIPAL+"</mark>+ <br/>" + "at an interest rate of <mark>" + RATE + "%.</mark> <br/>"+ "You will receive an amount of <mark>"+ AMOUNT + "</mark>,<br/>" + "in the year <mark>" + FUTUREYEAR + "</mark>";
+    PARA.innerHTML = "If you deposit <mark>"+ PRINCIPAL +"</mark><br/>" + "at an interest rate of <mark>" + RATE + "%.</mark> <br/>"+ "You will receive an amount of <mark>"+ AMOUNT + "</mark>,<br/>" + "in the year <mark>" + FUTUREYEAR + "</mark>";
 
     console.log(PRINCIPAL,RATE,YEARS,AMOUNT);
     document.getElementById("RESULT").innerHTML=PARA.innerHTML;
